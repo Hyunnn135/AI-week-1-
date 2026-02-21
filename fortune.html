@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로또 번호 생성기</title>
+    <title>오늘의 운세</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="top-right-controls">
         <button id="theme-toggle-btn" class="control-btn">🌙</button>
+        <a href="index.html" class="control-btn">🏠</a>
     </div>
     <div class="container">
-        <h1>로또 번호 생성기</h1>
-        <div id="lotto-sets-container"></div>
-        <div class="button-group">
-            <button id="generate-btn" class="generate-btn">번호 생성</button>
-            <a href="fortune.html" class="generate-btn">오늘의 운세</a>
+        <h1>오늘의 운세</h1>
+        <div class="fortune-input-container">
+            <input type="date" id="birthdate-input" class="fortune-input">
+            <button id="fortune-btn" class="generate-btn">운세 확인</button>
         </div>
+        <div id="fortune-results-container"></div>
     </div>
     <script src="main.js"></script>
 </body>
