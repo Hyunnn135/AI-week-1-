@@ -6,10 +6,10 @@
     --container-bg: rgba(255, 255, 255, 0.1);
     --container-border: rgba(255, 255, 255, 0.2);
     --lotto-set-bg: rgba(255, 255, 255, 0.05);
-    --btn-bg: oklch(60% 0.25 250);
-    --btn-hover-bg: oklch(65% 0.28 250);
+    --btn-bg: oklch(65% 0.18 240);
+    --btn-hover-bg: oklch(70% 0.2 240);
     --btn-shadow: rgba(0, 0, 0, 0.2);
-    --btn-hover-shadow: rgba(80, 120, 255, 0.5);
+    --btn-hover-shadow: oklch(70% 0.2 240 / 0.5);
     --input-bg: rgba(255, 255, 255, 0.2);
     --input-border: rgba(255, 255, 255, 0.3);
     --fortune-section-bg: rgba(255, 255, 255, 0.05);
@@ -21,10 +21,10 @@
     --container-bg: rgba(0, 0, 0, 0.3);
     --container-border: rgba(255, 255, 255, 0.1);
     --lotto-set-bg: rgba(0, 0, 0, 0.1);
-    --btn-bg: oklch(70% 0.1 200);
-    --btn-hover-bg: oklch(75% 0.12 200);
+    --btn-bg: oklch(65% 0.15 220);
+    --btn-hover-bg: oklch(70% 0.17 220);
     --btn-shadow: rgba(0, 0, 0, 0.5);
-    --btn-hover-shadow: rgba(100, 200, 255, 0.5);
+    --btn-hover-shadow: oklch(70% 0.17 220 / 0.5);
     --input-bg: rgba(0, 0, 0, 0.2);
     --input-border: rgba(255, 255, 255, 0.2);
     --fortune-section-bg: rgba(0, 0, 0, 0.1);

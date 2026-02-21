@@ -5,6 +5,7 @@
 
 ## Style, Design, and Features
 - **Design Philosophy:** Glassmorphism 스타일의 투명한 카드 레이아웃과 생동감 넘치는 OKLCH 색상 시스템을 적용합니다.
+- **Color Palette:** 버튼 색상을 채도가 낮은 하늘색과 파란색의 중간 톤으로 조정하여 부드러운 느낌을 강조합니다.
 - **Typography:** 부드럽고 친근한 느낌을 주기 위해 'Gaegu' Google Font를 사용합니다.
 - **Components:** `lotto-ball` 이라는 Custom Element를 사용하여 번호 공을 모듈화합니다.
 - **Interactivity:** 추첨 버튼 클릭 시 번호가 하나씩 순차적으로 나타나는 애니메이션을 구현합니다.
@@ -13,6 +14,6 @@
 - **Fortune Page:** 생년월일을 입력받아 "오늘의 좋은 일", "주의해야 할 일", "요약" 세 가지 섹션으로 구성된 운세를 제공합니다. 운세 내용은 세 줄 정도의 풍부한 설명으로 제공됩니다.
 
 ## Implementation Plan (Current Request)
-1.  **Fortune Content Update:**
-    - `main.js`의 `goodDeeds`, `badDeeds`, `summaries` 배열에 포함된 운세 내용을 각각 세 문장 정도의 길이로 수정하여 더 상세하고 정성스러운 느낌을 줍니다.
+1.  **Color Update:**
+    - `style.css`의 `:root` 및 `.dark-mode` 선택자에 정의된 버튼 색상 변수(`--btn-bg`, `--btn-hover-bg`)의 채도와 색조를 조정합니다.
 2.  **Git Push:** 모든 변경 사항을 GitHub 저장소에 푸시합니다.
