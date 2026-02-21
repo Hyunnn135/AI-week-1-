@@ -6,16 +6,17 @@ class LottoBall extends HTMLElement {
 
     connectedCallback() {
         const number = this.getAttribute('number');
+        const isBonus = this.hasAttribute('bonus');
         this.shadowRoot.innerHTML = `
             <style>
                 .ball {
-                    width: 60px;
-                    height: 60px;
+                    width: 50px;
+                    height: 50px;
                     border-radius: 50%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    font-size: 24px;
+                    font-size: 20px;
                     font-weight: bold;
                     color: white;
                     margin: 5px;
@@ -26,8 +27,12 @@ class LottoBall extends HTMLElement {
                 .ball:hover {
                     transform: scale(1.1);
                 }
+                .bonus {
+                    background-color: oklch(60% 0.25 80);
+                    border: 2px dashed white;
+                }
             </style>
-            <div class="ball">${number}</div>
+            <div class="ball ${isBonus ? 'bonus' : ''}">${number}</div>
         `;
     }
 
@@ -44,22 +49,37 @@ class LottoBall extends HTMLElement {
 customElements.define('lotto-ball', LottoBall);
 
 const generateBtn = document.getElementById('generate-btn');
-const lottoNumbersContainer = document.getElementById('lotto-numbers');
+const lottoSetsContainer = document.getElementById('lotto-sets-container');
 
 generateBtn.addEventListener('click', () => {
-    lottoNumbersContainer.innerHTML = '';
-    const numbers = new Set();
-    while(numbers.size < 6) {
-        numbers.add(Math.floor(Math.random() * 45) + 1);
-    }
+    lottoSetsContainer.innerHTML = '';
+    for (let i = 0; i < 5; i++) {
+        const lottoSet = document.createElement('div');
+        lottoSet.className = 'lotto-set';
 
-    const sortedNumbers = Array.from(numbers).sort((a, b) => a - b);
+        const numbers = new Set();
+        while(numbers.size < 7) { // 6 regular + 1 bonus
+            numbers.add(Math.floor(Math.random() * 45) + 1);
+        }
 
-    sortedNumbers.forEach((number, index) => {
+        const sortedNumbers = Array.from(numbers).sort((a, b) => a - b);
+        const bonusNumber = sortedNumbers.pop();
+
+        sortedNumbers.forEach((number, index) => {
+            setTimeout(() => {
+                const ball = document.createElement('lotto-ball');
+                ball.setAttribute('number', number);
+                lottoSet.appendChild(ball);
+            }, index * 100 + i * 500);
+        });
+
         setTimeout(() => {
-            const ball = document.createElement('lotto-ball');
-            ball.setAttribute('number', number);
-            lottoNumbersContainer.appendChild(ball);
-        }, index * 300);
-    });
+            const bonusBall = document.createElement('lotto-ball');
+            bonusBall.setAttribute('number', bonusNumber);
+            bonusBall.setAttribute('bonus', '');
+            lottoSet.appendChild(bonusBall);
+        }, 6 * 100 + i * 500);
+
+        lottoSetsContainer.appendChild(lottoSet);
+    }
 });
