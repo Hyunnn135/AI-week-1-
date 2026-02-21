@@ -16,6 +16,8 @@
   - 41-45: 초록색 계열
 
 ## Implementation Plan (Current Request)
-1. **HTML Layout:** `index.html`을 업데이트하여 기본 컨테이너, 번호 표시 영역, 그리고 추첨 버튼을 추가합니다.
-2. **Web Component Setup:** `main.js`에서 `lotto-ball` 컴포넌트의 기본 구조를 잡습니다.
-3. **Basic Styling:** `style.css`에 배경 및 기본 레이아웃 스타일을 적용합니다.
+1. **HTML Layout:** `index.html`을 업데이트하여 5개의 로또 번호 세트를 표시할 컨테이너를 추가합니다.
+2. **Web Component & Logic Update:** `main.js`를 수정하여 한 번에 5세트의 번호(6개 일반 + 1개 보너스)를 생성하는 로직을 구현합니다. 보너스 번호는 시각적으로 구분되도록 처리합니다.
+3. **Styling Update:** `style.css`를 업데이트하여 여러 세트의 번호와 보너스 번호를 명확하게 표시하도록 스타일을 개선합니다.
+4. **Git Push:** 변경 사항을 GitHub 저장소에 푸시합니다.
+5. **Deployment:** Firebase Hosting을 통해 웹 애플리케이션을 배포합니다.
