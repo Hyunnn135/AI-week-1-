@@ -10,10 +10,9 @@
 - **Interactivity:** 추첨 버튼 클릭 시 번호가 하나씩 순차적으로 나타나는 애니메이션을 구현합니다.
 - **Responsiveness:** Container Queries를 사용하여 다양한 화면 크기에서도 최적의 레이아웃을 유지합니다.
 - **Theme:** 라이트/다크 모드 전환 기능을 제공하며, `localStorage`를 통해 사용자의 선호도를 저장합니다.
-- **Fortune Page:** 생년월일을 입력받아 "오늘의 좋은 일", "주의해야 할 일", "요약" 세 가지 섹션으로 구성된 운세를 제공합니다.
+- **Fortune Page:** 생년월일을 입력받아 "오늘의 좋은 일", "주의해야 할 일", "요약" 세 가지 섹션으로 구성된 운세를 제공합니다. 운세 내용은 세 줄 정도의 풍부한 설명으로 제공됩니다.
 
 ## Implementation Plan (Current Request)
-1.  **Font Update:**
-    - `style.css`에 Google Fonts의 'Gaegu' 폰트를 import합니다.
-    - `body`의 `font-family`를 'Gaegu'로 변경하여 전체 애플리케이션에 적용합니다.
+1.  **Fortune Content Update:**
+    - `main.js`의 `goodDeeds`, `badDeeds`, `summaries` 배열에 포함된 운세 내용을 각각 세 문장 정도의 길이로 수정하여 더 상세하고 정성스러운 느낌을 줍니다.
 2.  **Git Push:** 모든 변경 사항을 GitHub 저장소에 푸시합니다.
