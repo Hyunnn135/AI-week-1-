@@ -16,8 +16,7 @@
   - 41-45: 초록색 계열
 
 ## Implementation Plan (Current Request)
-1. **HTML Layout:** `index.html`을 업데이트하여 5개의 로또 번호 세트를 표시할 컨테이너를 추가합니다.
-2. **Web Component & Logic Update:** `main.js`를 수정하여 한 번에 5세트의 번호(6개 일반 + 1개 보너스)를 생성하는 로직을 구현합니다. 보너스 번호는 시각적으로 구분되도록 처리합니다.
-3. **Styling Update:** `style.css`를 업데이트하여 여러 세트의 번호와 보너스 번호를 명확하게 표시하도록 스타일을 개선합니다.
+1. **HTML Layout:** `index.html`을 업데이트하여 오른쪽 상단에 테마 전환 버튼을 포함할 영역을 추가합니다. 버튼은 눈에 잘 띄고, 향후 다른 버튼을 위한 충분한 공간을 확보합니다.
+2. **Web Component & Logic Update:** `main.js`를 수정하여 테마 전환 로직을 구현합니다. 사용자의 테마 선호도를 `localStorage`에 저장하고, 페이지 로드 시 이 설정을 적용합니다.
+3. **Styling Update:** `style.css`를 업데이트하여 라이트 모드와 다크 모드에 따른 색상 변수를 정의하고, 버튼 스타일 및 다크 모드 스타일을 추가합니다. 버튼의 시각적 강조를 위해 적절한 스타일을 적용합니다.
 4. **Git Push:** 변경 사항을 GitHub 저장소에 푸시합니다.
-5. **Deployment:** Firebase Hosting을 통해 웹 애플리케이션을 배포합니다.

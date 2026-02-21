@@ -50,6 +50,25 @@ customElements.define('lotto-ball', LottoBall);
 
 const generateBtn = document.getElementById('generate-btn');
 const lottoSetsContainer = document.getElementById('lotto-sets-container');
+const themeToggleBtn = document.getElementById('theme-toggle-btn');
+
+const applyTheme = (theme) => {
+    document.body.className = theme;
+    localStorage.setItem('theme', theme);
+    themeToggleBtn.textContent = theme === 'dark-mode' ? '☀️' : '🌙';
+};
+
+themeToggleBtn.addEventListener('click', () => {
+    const currentTheme = localStorage.getItem('theme') || 'light-mode';
+    const newTheme = currentTheme === 'light-mode' ? 'dark-mode' : 'light-mode';
+    applyTheme(newTheme);
+});
+
+// Apply saved theme on load
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme') || 'light-mode';
+    applyTheme(savedTheme);
+});
 
 generateBtn.addEventListener('click', () => {
     lottoSetsContainer.innerHTML = '';
